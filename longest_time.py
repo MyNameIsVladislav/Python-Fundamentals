@@ -7,19 +7,19 @@
 """
 
 
-def max_time(time_):
+def max_time(time_input):
     seconds, res = 0, 0
-    if len(time_) == 3:
-        for k, i in enumerate(time_[::-1]):
-            k = 60 ** k
-            if seconds < i * k:
-                seconds = i * k
-                res = i
+    if len(time_input) == 3:
+        for degree, item in enumerate(time_input[::-1]):
+            degree = 60 ** degree
+            if seconds < item * degree:
+                seconds = item * degree
+                res = item
         return res
 
 
 try:
-    obj_time = list(map(int, input().split(',')))
+    obj_time = list(map(int, input('Введите h (часы), m (минуты), s (секунды): ').split(',')))
     print(max_time(obj_time))
 except ValueError:
     print("Несоответствующее значение")
