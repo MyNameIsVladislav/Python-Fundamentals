@@ -1,4 +1,5 @@
 
+
 class MyIterator:
     def __init__(self, string):
         self.string = string
@@ -16,8 +17,8 @@ class MyIterator:
             raise StopIteration
 
 
-s = 'wis_software'
-iterator_ = MyIterator(s)
+str_obj = 'wis_software'
+iter_obj = MyIterator(str_obj)
 
 while True:
-    print(next(iterator_))
+    print(next(iter_obj))
