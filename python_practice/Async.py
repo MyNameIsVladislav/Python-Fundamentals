@@ -10,6 +10,7 @@ async def get_status(res):
             print(f'Done - {response.url[-7:]}')
     response.close()
 
+
 async def main():
     tasks = []
     for i in range(10, 30):
@@ -18,6 +19,7 @@ async def main():
                 loop.run_in_executor(None, requests.get, f'https://cdn2.thecatapi.com/images/d{i}.jpg')
             )))
     await asyncio.wait(tasks)
+
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(main())
