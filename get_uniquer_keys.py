@@ -12,8 +12,10 @@ class CoolBookIter:
     def get_item(self):
         if self.simple_dict.get("Cook Book"):
             for item in self.simple_dict["Cook Book"]:
-                for key, value in item.items():
-                    self.sort_dict.update(value)
+                self.get_value(item.popitem())
+
+    def get_value(self, tuple_obj):
+        self.sort_dict.update(tuple_obj[1])
 
     def __get__(self):
         return self.sort_dict
